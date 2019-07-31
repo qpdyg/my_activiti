@@ -1,0 +1,22 @@
+#swagger配置
+swagger2:
+  enable: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://lc.xiaolc.cn:3306/activiti6_0?useSSL=false&useUnicode=true&characterEncoding=utf-8
+    username: admin
+    password:
+    time-between-eviction-runs-millis: 300000
+    min-evictable-idle-time-millis: 1800000
+  redis:
+    #database:
+    host: www.xiaolc.cn
+    password: redis@123
+    port: 6379
+    pool:
+      max-idle: 100
+      min-idle: 20
+      max-active: 100
+      max-wait: -1

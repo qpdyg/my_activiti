@@ -1,0 +1,68 @@
+spring:
+  profiles:
+    active: dev
+#让数据库忽略表名大小写
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: com.xiaolc.util.MySQLUpperCaseStrategy
+  #freemarker模板配置
+  freemarker:
+    suffix: .ftl
+    cache: false
+    charset: UTF-8
+    contentType: text/html
+    requestContextAttribute: ctx
+    templateEncoding: UTF-8
+    templateLoaderPath: classpath:/templates/
+    settings:
+      defaultEncoding: UTF-8
+      url_escaping_charset: UTF-8
+      locale: zh_CN
+  http:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+    activiti:
+      check-process-definitions: false
+server:
+  #servlet:
+    #context-path: /my_activiti
+  port: 9000
+  #restpath: /api/my_activiti/
+  #logintype: SESSION
+#    session:
+#      timeout: 3600
+
+
+#mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.xiaolc.model
+  configuration.log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# 分页配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+# 日志配置
+logging:
+  level:
+    com.cc.promisewebserver: debug
+    jdbc.sqlonly: debug
+    jdbc.resultsettable: debug
+    jdbc.audit: error
+    jdbc.resultset: error
+    jdbc.sqltiming: error
+    jdbc.connection: error
+    org.springframework.web.servlet: warn
+    org.springframework.boot.actuate.endpoint.mvc: warn
+    springfox.documentation: warn
+    com.zaxxer.hikari.pool.HikariPool: warn
+    org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener: warn
+    org.springframework.boot.actuate.endpoint.web.servlet.ControllerEndpointHandlerMapping: warn
+    org.springframework.boot.actuate.endpoint.web.servlet.WebMvcEndpointHandlerMapping: warn
+    org.springframework.boot.web.servlet.filter.OrderedRequestContextFilter: warn
+    org.springframework.boot.actuate.audit.listener.AuditListener: warn

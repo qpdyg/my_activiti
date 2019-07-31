@@ -1,0 +1,21 @@
+#swagger配置
+swagger2:
+  enable: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://39.106.93.195:3306/activiti-6?useSSL=false&useUnicode=true&characterEncoding=utf-8&nullCatalogMeansCurrent=true
+    username: mysql
+    password:
+    time-between-eviction-runs-millis: 300000
+    min-evictable-idle-time-millis: 1800000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  jackson:
+    serialization:
+      indent-output: true
+  main:
+    allow-bean-definition-overriding: true

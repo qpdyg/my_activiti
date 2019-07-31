@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
+  <process id="myProcess" name="请假审批" isExecutable="true" activiti:versionTag="0.0.1">
+    <documentation>请假</documentation>
+    <startEvent id="startevent1" name="开始">
+      <outgoing>SequenceFlow_1yhonob</outgoing>
+    </startEvent>
+    <endEvent id="EndEvent_0pup8pt" name="结束">
+      <incoming>SequenceFlow_1oqm2xq</incoming>
+    </endEvent>
+    <task id="Task_1scnauv" name="张三">
+      <incoming>SequenceFlow_1yhonob</incoming>
+      <outgoing>SequenceFlow_1jn09o7</outgoing>
+    </task>
+    <task id="Task_1g78c60" name="李四">
+      <incoming>SequenceFlow_1jn09o7</incoming>
+      <outgoing>SequenceFlow_1oqm2xq</outgoing>
+    </task>
+    <sequenceFlow id="SequenceFlow_1yhonob" sourceRef="startevent1" targetRef="Task_1scnauv" />
+    <sequenceFlow id="SequenceFlow_1jn09o7" sourceRef="Task_1scnauv" targetRef="Task_1g78c60" />
+    <sequenceFlow id="SequenceFlow_1oqm2xq" sourceRef="Task_1g78c60" targetRef="EndEvent_0pup8pt" />
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_myProcess">
+    <bpmndi:BPMNPlane id="BPMNPlane_myProcess" bpmnElement="myProcess">
+      <bpmndi:BPMNShape id="BPMNShape_startevent1" bpmnElement="startevent1">
+        <omgdc:Bounds x="333" y="370" width="35" height="35" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="339" y="405" width="24" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_0pup8pt_di" bpmnElement="EndEvent_0pup8pt">
+        <omgdc:Bounds x="818" y="370" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="824" y="410" width="24" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1scnauv_di" bpmnElement="Task_1scnauv">
+        <omgdc:Bounds x="459" y="348" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Task_1g78c60_di" bpmnElement="Task_1g78c60">
+        <omgdc:Bounds x="620" y="348" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1yhonob_di" bpmnElement="SequenceFlow_1yhonob">
+        <omgdi:waypoint xsi:type="omgdc:Point" x="368" y="388" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="459" y="388" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="413.5" y="367" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1jn09o7_di" bpmnElement="SequenceFlow_1jn09o7">
+        <omgdi:waypoint xsi:type="omgdc:Point" x="559" y="388" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="620" y="388" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="589.5" y="367" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1oqm2xq_di" bpmnElement="SequenceFlow_1oqm2xq">
+        <omgdi:waypoint xsi:type="omgdc:Point" x="720" y="388" />
+        <omgdi:waypoint xsi:type="omgdc:Point" x="818" y="388" />
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds x="769" y="367" width="0" height="12" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
